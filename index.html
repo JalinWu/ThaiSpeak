@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ThaiSpeak 泰好說｜主題式有聲詞典，隨時隨地邊聽邊學</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Google AdSense：將 ca-pub-XXXXXXXXXXXX 與 data-ad-slot 替換成你的值 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>ThaiSpeak 泰好說</h1>
+      <p class="sub">主題式有聲詞典，隨時隨地邊聽邊學 <span class="tag"><span class="pill">即查</span>・<span class="pill">即聽</span>・<span class="pill">即學</span></span></p>
+
+      <div class="toolbar">
+        <label class="field" style="flex:1">
+          <span>🔎</span>
+          <input id="q" placeholder="搜尋中文 / 泰文 / 拼音..."/>
+        </label>
+
+        <button class="btn acc" id="speakSelected" title="使用語音朗讀目前篩選結果">▶ 朗讀</button>
+
+        <!-- 手機版主題切換按鈕（桌面隱藏） -->
+        <button class="btn topic-toggle" id="topicToggle" aria-expanded="false" aria-controls="sidebar">☰ 主題</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="layout">
+      <aside id="sidebar" class="sidebar" aria-label="學習主題">
+        <h2 class="sr-only">主題</h2>
+        <div id="sidebarTopics"></div>
+      </aside>
+
+      <section>
+        <div class="card">
+          <table id="tbl">
+            <thead>
+              <tr>
+                <th style="width:22%">中文</th>
+                <th style="width:28%">泰文</th>
+                <th style="width:28%">拼音（RTGS）</th>
+                <th style="width:12%">分類</th>
+                <th style="width:10%">發音</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+
+        <!-- 內文下方廣告（自適應） -->
+        <div class="wrap ad-box" aria-label="內文下方廣告" style="margin-top:16px">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXX"
+               data-ad-slot="1111111111"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <!-- 第一欄 -->
+        <div class="footer-col">
+          <h4>聯絡我們</h4>
+          <p>商業合作 / 內容校正</p>
+          <p>lily.wu035@gmail.com</p>
+        </div>
+
+        <!-- 第二欄 -->
+        <div class="footer-col">
+          <h4>贊助</h4>
+          <p>如果你喜歡這個小工具，可以幫我們分享出去</p>
+          <p>若是對你的學習有幫助，不妨考慮贊助一下～</p>
+          <h4>如何贊助</h4>
+          <p>掃描 LINE Pay / iPASS MONEY 轉帳收款碼，即可輕鬆完成贊助。每一筆贊助，都是維運與持續的動力，感謝你的支持！</p>
+        </div>
+
+        <!-- 第三欄（QR Code） -->
+        <div class="footer-col footer-qr" style="text-align:center">
+          <!-- 放你的 Line Pay QR 圖片（替換 src） -->
+          <!-- <img src="img/linepay-qr.png" alt="Line Pay 收款碼" width="200" height="200"> -->
+          <div class="qr-placeholder">
+            <img src="img/LineQR.JPG" style="max-width: 120px"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+        <div style="text-align:center">
+          朗讀採用瀏覽器 <code>SpeechSynthesis</code>（若裝置無泰語語音，將以英文語音備援）。
+        </div>
+    </div>
+
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

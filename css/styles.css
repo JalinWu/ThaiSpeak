@@ -1,0 +1,91 @@
+:root{
+  --bg:#0b1020;--card:#111936;--muted:#8ea2b8;--text:#eaf2ff;--acc:#7cc4ff;--acc2:#a7ffdf;--border:#263457;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#081125, #090e1a 40%, #0b1020);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans",sans-serif}
+header{position:sticky;top:0;background:rgba(11,16,32,.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:10}
+.wrap{max-width:1100px;margin:0 auto;padding:20px}
+h1{font-size:clamp(20px,3vw,32px);margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 14px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap}
+input,button,select{font:inherit}
+.field{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--card);border:1px solid var(--border);border-radius:12px;min-width:180px}
+.field input{all:unset;width:100%}
+.btn{border:1px solid var(--border);background:#192345;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;transition:.2s;display:inline-flex;gap:8px;align-items:center}
+.btn:hover{background:#1e2a57}
+.btn.acc{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#001e2e;border-color:transparent}
+.btn.acc:hover{filter:brightness(1.05)}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead th{background:#0e1733;border-bottom:1px solid var(--border);padding:12px 10px;text-align:left;font-weight:700}
+tbody td{border-top:1px solid var(--border);padding:10px;vertical-align:middle}
+tbody tr:hover{background:#131e3f}
+.pill{display:inline-block;padding:2px 8px;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
+
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:12px}
+.grid .field{min-width:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.play{cursor:pointer}
+.tag{font-size:12px;color:var(--muted)}
+footer{color:var(--muted);text-align:center;padding:24px}
+
+@media (max-width:860px){
+  .grid{grid-template-columns:1fr 1fr}
+}
+
+/* ===== 左側主題清單 / RWD 兩欄版型（手機可收合） ===== */
+    .layout{display:grid;grid-template-columns:260px 1fr;gap:16px}
+    .sidebar{position:sticky;top:78px;height:calc(100vh - 90px);overflow:auto;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:10px}
+    .topic-btn{width:100%;text-align:left;border:1px solid var(--border);background:#141f42;color:var(--text);padding:10px 12px;border-radius:12px;cursor:pointer;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+    .topic-btn:hover{background:#19265a}
+    .topic-btn.active{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#001e2e;border-color:transparent}
+    .badge{font-size:12px;opacity:.9}
+
+    /* 手機上：顯示主題切換鈕、側欄可收合 */
+    .topic-toggle{ display:none; }
+    @media (max-width:1000px){
+      /* .layout{grid-template-columns:1fr} */
+      .layout{display: block}
+      .sidebar{position:static;height:auto;display:none}
+      .sidebar.open{display:block; margin-bottom: 16px}
+      .topic-toggle{ display:inline-flex; }
+      #sidebarTopics{ display: ruby; }
+      .topic-btn{ width: calc((100% - 30px) / 3); margin: 5px }
+      .tag{ display: none }
+      .topic-toggle{ width: 100%}
+    }
+
+/* 廣告外框樣式（底部廣告） */
+.ad-box{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+/* Footer 三欄（含 RWD） */
+footer{ color:var(--muted); padding:0px; text-align:left; border-top: 1px solid var(--border)}
+.footer-box{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px; }
+.footer-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; align-items:start; }
+.footer-col h4{ margin:0 0 8px; color:var(--text); font-size:16px; }
+.footer-col p{ margin:0 0 10px; }
+.footer-col a{ color:var(--text); text-decoration:none; }
+.footer-col a:hover{ text-decoration:underline; }
+.footer-actions .btn-link{
+  display:inline-block; padding:10px 14px; border:1px solid var(--border);
+  border-radius:12px; background:#192345; color:var(--text); text-decoration:none;
+}
+.footer-qr{ display:flex; flex-direction:column; gap:10px; align-items:center}
+.footer-qr .qr-placeholder{
+  width:200px; height:200px; border:1px dashed var(--border); border-radius:12px;
+  display:flex; align-items:center; justify-content:center; color:var(--muted);
+}
+
+/* RWD：平板兩欄、手機單欄 */
+@media (max-width:1000px){
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:700px){
+  .footer-grid{ grid-template-columns:1fr; }
+}
