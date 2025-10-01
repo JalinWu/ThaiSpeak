@@ -40,8 +40,9 @@ function speakThaiAsync(text){
     const v = getThaiVoice();
     if (v) u.voice = v;
     u.rate = 0.92;
-    u.onend = resolve;
-    u.onerror = resolve;
+    // u.onend = resolve;
+    // u.onerror = resolve;
+
     speechSynthesis.speak(u);
   });
 }
@@ -58,9 +59,9 @@ function render(rows){
       <td>${escapeHtml(r.zh)}</td>
       <td>${escapeHtml(r.th)}</td>
       <td>${escapeHtml(r.rtgs)}</td>
-      <td><span class="pill">${escapeHtml(r.cat||'')}</span></td>
       <td><button class="btn play" title="播放泰文發音">▶️</button></td>
-    `;
+      `;
+    //   <td><span class="pill">${escapeHtml(r.cat||'')}</span></td>
     tr.querySelector('.play').addEventListener('click', () => speakThai(r.th));
     tbody.appendChild(tr);
   }

@@ -11,7 +11,7 @@ h1{font-size:clamp(20px,3vw,32px);margin:0 0 6px}
 input,button,select{font:inherit}
 .field{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--card);border:1px solid var(--border);border-radius:12px;min-width:180px}
 .field input{all:unset;width:100%}
-.btn{border:1px solid var(--border);background:#192345;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;transition:.2s;display:inline-flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--border);background:#192345;color:var(--text);padding:9px 12px;border-radius:12px;cursor:pointer;transition:.2s;display:inline-flex;gap:8px;align-items:center}
 .btn:hover{background:#1e2a57}
 .btn.acc{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#001e2e;border-color:transparent}
 .btn.acc:hover{filter:brightness(1.05)}
@@ -50,7 +50,7 @@ footer{color:var(--muted);text-align:center;padding:24px}
       .sidebar{position:static;height:auto;display:none}
       .sidebar.open{display:block; margin-bottom: 16px}
       .topic-toggle{ display:inline-flex; }
-      #sidebarTopics{ display: ruby; }
+      #sidebarTopics{ display: flex; flex-wrap: wrap; }
       .topic-btn{ width: calc((100% - 30px) / 3); margin: 5px }
       .tag{ display: none }
       .topic-toggle{ width: 100%}
