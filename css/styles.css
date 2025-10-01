@@ -32,6 +32,7 @@ footer{color:var(--muted);text-align:center;padding:24px}
 
 @media (max-width:860px){
   .grid{grid-template-columns:1fr 1fr}
+  #speakSelected{display:none}
 }
 
 /* ===== 左側主題清單 / RWD 兩欄版型（手機可收合） ===== */

@@ -40,8 +40,8 @@ function speakThaiAsync(text){
     const v = getThaiVoice();
     if (v) u.voice = v;
     u.rate = 0.92;
-    // u.onend = resolve;
-    // u.onerror = resolve;
+    u.onend = resolve;
+    u.onerror = resolve;
 
     speechSynthesis.speak(u);
   });
@@ -130,7 +130,7 @@ speakSelectedBtn.addEventListener('click', async () => {
     const th = tr.children[1].textContent.trim();
     await speakThaiAsync(th);
     if (!isReading) break;
-    await new Promise(r => setTimeout(r, 150));
+    await new Promise(r => setTimeout(r, 300));
   }
   isReading = false;
   speakSelectedBtn.textContent = '▶ 朗讀';
