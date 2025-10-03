@@ -71,7 +71,7 @@ footer{ color:var(--muted); padding:0px; text-align:left; border-top: 1px solid 
 .footer-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; align-items:start; }
 .footer-col h4{ margin:0 0 8px; color:var(--text); font-size:16px; }
 .footer-col p{ margin:0 0 10px; }
-.footer-col a{ color:var(--text); text-decoration:none; }
+/* .footer-col a{ color:var(--text); text-decoration:none; } */
 .footer-col a:hover{ text-decoration:underline; }
 .footer-actions .btn-link{
   display:inline-block; padding:10px 14px; border:1px solid var(--border);
@@ -94,4 +94,12 @@ footer{ color:var(--muted); padding:0px; text-align:left; border-top: 1px solid 
 .sidebar::-webkit-scrollbar {
     display: none;
     width: 0 !important;
+}
+
+.tablinks {
+  color: var(--muted);
+}
+.tablinks.active {
+  color: var(--text);
+  text-decoration: underline
 }

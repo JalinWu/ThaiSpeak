@@ -86,14 +86,23 @@
           <p>如果你喜歡這個小工具，可以幫我們分享出去</p>
           <p>若是對你的學習有幫助，不妨考慮贊助一下～</p>
           <h4>如何贊助</h4>
-          <p>掃描 LINE Pay / iPASS MONEY 轉帳收款碼，即可輕鬆完成贊助。每一筆贊助，都是維運與持續的動力，感謝你的支持！</p>
+          <p>掃描 街口支付 或 iPASS MONEY 轉帳收款碼，即可輕鬆完成贊助。每一筆贊助，都是維運與持續的動力，感謝你的支持！</p>
         </div>
 
         <!-- 第三欄（QR Code） -->
         <div class="footer-col footer-qr" style="text-align:center">
           <!-- 放你的 Line Pay QR 圖片（替換 src） -->
-          <!-- <img src="img/linepay-qr.png" alt="Line Pay 收款碼" width="200" height="200"> -->
-          <div class="qr-placeholder">
+          <div class="tab" style="display: flex; justify-content: center;width: 100%">
+            <a class="tablinks active" onclick="openCity(event, 'Jko')">街口支付</a>
+            <p>&nbsp&nbsp|&nbsp&nbsp</p>
+            <a class="tablinks" onclick="openCity(event, 'Line')">iPASS MONEY</a>
+            <!-- <button class="tablinks topic-btn active" onclick="openCity(event, 'Jko')">街口支付</button>
+            <button class="tablinks topic-btn" onclick="openCity(event, 'Line')">iPASS MONEY</button> -->
+          </div>
+          <div id="Jko" class="tabcontent">
+            <img src="img/jkoQR.png" alt="jkopay QRcode" style="max-width: 120px"/>
+          </div>
+          <div id="Line" class="tabcontent" style="display: none">
             <img src="img/LineQR.JPG" alt="iPASS MONEY QRcode" style="max-width: 120px"/>
           </div>
         </div>
